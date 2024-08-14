@@ -9,13 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service//컴포넌트 스캔
+//컴포넌트 스캔
 public class MemberService {
     
     private final MemberRepository memberRepository;
 
-    @Autowired
-    public MemberService(MemoryMemberRepository memberRepository){
+    public MemberService(MemberRepository memberRepository){
         this.memberRepository =memberRepository;
     };
     
