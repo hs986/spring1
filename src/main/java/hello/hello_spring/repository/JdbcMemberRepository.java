@@ -1,4 +1,4 @@
-package hello.hellospring.repository;
+package hello.hello_spring.repository;
 import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.domain.Member;
 import org.springframework.jdbc.datasource.DataSourceUtils;
@@ -7,13 +7,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-public class JdbcMemberRepository implements MemberRepository {
+
+public class JdbcMemberRepository implements MemberRepository  {
 
     private final DataSource dataSource;
 
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
+
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name) values(?)";
@@ -45,7 +47,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
 
 @Override
-public Optional<Member> findById(Long id) {
+public Optional<Member> findById(long id) {
     String sql = "select * from member where id = ?";
     Connection conn = null;
     PreparedStatement pstmt = null;
