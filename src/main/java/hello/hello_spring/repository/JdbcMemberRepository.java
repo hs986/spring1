@@ -159,5 +159,5 @@ private void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
 }
 private void close(Connection conn) throws SQLException {
     DataSourceUtils.releaseConnection(conn, dataSource);
+    }
 }
- }
